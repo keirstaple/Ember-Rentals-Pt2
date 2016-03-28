@@ -3,6 +3,7 @@
   {{#if announcementShowing }}
   <p> {{announcements.city}} {{announcements.date}}: {{announcements.description}}
   <button {{action 'announcementHide'}}>Disregard</button>
+  {{update-announcement announcements=announcements update="update"}}
   <button {{action 'delete' announcements}}>Delete</button></p>
   {{else}}
   <button {{action 'announcementShow'}}>Return Announcement</button>

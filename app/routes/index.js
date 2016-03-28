@@ -37,6 +37,16 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
 
+    update(announcements, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          announcements.set(key,params[key]);
+        }
+      });
+      announcements.save();
+      this.transitionTo('index'); 
+    }
+
     destroyAnnouncement(announcements) {
       announcements.destroyRecord();
       this.transitionTo('index');
