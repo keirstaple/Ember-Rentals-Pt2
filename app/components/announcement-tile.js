@@ -3,11 +3,11 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   announcementShowing: true,
   actions: {
-    announcementHide: function() {
-      this.set('announcementShowing', false);
-    },
     announcementShow: function() {
       this.set('announcementShowing', true);
+    },
+    announcementHide: function() {
+      this.set('announcementShowing', false);
     },
     delete(announcements) {
       if(confirm('Are you sure you want to delete this announcement?')) {

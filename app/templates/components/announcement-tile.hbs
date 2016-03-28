@@ -1,10 +1,10 @@
 
-
-<li> {{announcements.city}} {{announcements.date}}: {{announcements.description}}
+<li>
   {{#if announcementShowing }}
-  <p{{action 'announcementShow'}}></p>
+  <p> {{announcements.city}} {{announcements.date}}: {{announcements.description}}
+  <button {{action 'announcementHide'}}>Disregard</button>
+  <button {{action 'delete' announcements}}>Delete</button></p>
   {{else}}
-  <button {{action 'announcementHide'}}>Hide Announcement</button>
+  <button {{action 'announcementShow'}}>Return Announcement</button>
   {{/if}}
-  <button {{action 'delete' announcements}}>Delete</button>
 </li>
