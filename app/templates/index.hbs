@@ -3,15 +3,15 @@
 We hope you find exactly what you're looking for in a place to stay.
 
 <ul>
-  {{#each model as | rental |}}
+  {{#each model.rental as | rental |}}
   {{rental-tile rental=rental destroyRental="destroyRental"}} <!--GOES TO rental-tile.hbs-->
   {{/each}}
 </ul>
 {{new-rental save2="save3"}}
 
 <ul>
-  {{#each model as |announcement|}}
-  {{anouncement-tile anouncement=announcement}}
+  {{#each model.announcement as |announcement|}}
+  {{announcement-tile announcement=announcement}}
   {{/each}}
 </ul>
 

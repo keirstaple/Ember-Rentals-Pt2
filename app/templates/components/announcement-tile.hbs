@@ -1,1 +1,10 @@
 {{yield}}
+
+<li> {{announcement.city}} {{announcement.date}}: {{announcement.description}}
+  {{#if announcementShowing }}
+  <p{{action 'announcementShow'}}></p>
+  {{else}}
+  <button {{action 'announcementHide'}}>Hide Announcement</button>
+  {{/if}}
+  <button {{action 'delete' rental}}>Delete</button>
+</li>
