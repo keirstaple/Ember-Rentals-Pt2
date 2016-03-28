@@ -3,20 +3,21 @@
 We hope you find exactly what you're looking for in a place to stay.
 
 <ul>
-  {{#each model.rental as | rental |}}
-  {{rental-tile rental=rental destroyRental="destroyRental"}} <!--GOES TO rental-tile.hbs-->
+  {{#each model.rentals as |rentals|}}
+  {{rental-tile rentals=rentals destroyRental="destroyRental"}}
   {{/each}}
 </ul>
 {{new-rental save2="save3"}}
 
 <ul>
-  {{#each model.announcement as |announcement|}}
-  {{announcement-tile announcement=announcement}}
+  {{#each model.announcements as |announcements|}}
+  {{announcement-tile announcements=announcements destroyAnnouncement="destroyAnnouncement"}}
   {{/each}}
 </ul>
+
+{{log model.rental}}
 
 
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}
-{{outlet}}

@@ -17,7 +17,7 @@
       "bedrooms": 3,
       "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg"
       }],
-      "announcement": [{
+      "announcements": [{
         "city": "Portland",
         "date": "3-30-16",
         "description": "It's going to rain cats and dogs!"

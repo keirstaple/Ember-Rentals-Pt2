@@ -9,9 +9,9 @@ export default Ember.Component.extend({
     announcementShow: function() {
       this.set('announcementShowing', true);
     },
-    delete(announcement) {
+    delete(announcements) {
       if(confirm('Are you sure you want to delete this announcement?')) {
-        this.sendAction('destroyAnnouncement', rental);
+        this.sendAction('destroyAnnouncement', announcements);
       }
     }
   }
