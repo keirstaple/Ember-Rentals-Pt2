@@ -21,6 +21,16 @@ export default Ember.Route.extend({
       this.transitionTo('index');
     },
 
+    update(rentals, params) {
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          rentals.set(key,params[key]);
+        }
+      });
+      rentals.save();
+      this.transitionTo('index');
+    },
+
     saveAnnouncement(params) {
       var newAnnouncement = this.store.createRecord('announcements', params);
       newAnnouncement.save();

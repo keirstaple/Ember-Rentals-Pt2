@@ -1,8 +1,9 @@
 <li>{{rentals.owner}}'s {{rentals.type}} in {{rentals.city}}
-  {{#if isImageShowing }} <!--DOES THIS SPACE AFTER isImageShowing MATTER?-->
+  {{#if isImageShowing }}
     <p><img src={{rentals.image}} alt={{rentals.type}} {{action 'imageHide'}}></p>
   {{else}}
     <button {{action 'imageShow'}}>Show Image</button>
   {{/if}}
+  {{update-rental rentals=rentals update="update"}}
   <button {{action 'delete' rentals}}>Delete</button>
 </li>
