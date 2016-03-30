@@ -33,9 +33,11 @@ export default Ember.Route.extend({
       Object.keys(params).forEach(function(key) {
         if(params[key]!==undefined) {
           rentals.set(key,params[key]);
+          city.set(key, params[key]);
         }
       });
       rentals.save();
+      city.save();
       this.transitionTo('index');
     },
 
