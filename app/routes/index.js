@@ -5,19 +5,27 @@ export default Ember.Route.extend({
   model() {
       return Ember.RSVP.hash({
       rentals: this.store.findAll('rentals'),
-      announcements: this.store.findAll('announcements')
+      announcements: this.store.findAll('announcements'),
+      cities: this.store.findAll('city')
     });
   },
 
   actions: {
     save3(params) {
       var newRental = this.store.createRecord('rentals', params);
+      var newCity = this.store.createRecord('city', params);
       newRental.save();
+      newCity.save();
       this.transitionTo('index');
     },
 
     destroyRental(rentals) {
       rentals.destroyRecord();
+      this.transitionTo('index');
+    },
+
+    destroyCity(city) {
+      city.destroyRecord();
       this.transitionTo('index');
     },
 
@@ -44,8 +52,8 @@ export default Ember.Route.extend({
         }
       });
       announcements.save();
-      this.transitionTo('index'); 
-    }
+      this.transitionTo('index');
+    },
 
     destroyAnnouncement(announcements) {
       announcements.destroyRecord();
